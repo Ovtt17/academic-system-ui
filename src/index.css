@@ -9,8 +9,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --tw-bg-body: #1B1C31;
+  --tw-bg-deep-navy: #0D0E23;
   --tw-bg-card: #2C2D4C;
   --tw-bg-midnight-black: #0b0e14;
+  --tw-text-light: #FFFFFF;
+  --tw-text-muted: #CCCCCC;
 }
 
 * {
@@ -21,6 +24,11 @@
 
 body {
   background-color: var(--tw-bg-body);
+  color: var(--tw-text-light);
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+  color: var(--tw-text-light);
 }
 
 

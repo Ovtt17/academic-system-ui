@@ -10,7 +10,8 @@ export default {
         body: '#1B1C31',
         card: '#1E2139',
         'midnight-black': '#0b0e14',
-        'create-button': '#61DAFA'
+        'create-button': '#61DAFA',
+        'deep-navy': '#0D0E23'
       },
       boxShadowColor: {
         'create-button': '#61DAFA80'
