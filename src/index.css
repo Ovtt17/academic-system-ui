@@ -3,16 +3,45 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --tw-bg-body: #F0F4F9;
+  --tw-bg-midnight-black: #0b0e14;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--tw-bg-body);
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F5; /* Gris claro para el track */
+}
+::-webkit-scrollbar-track:hover {
+  background: #E0E0E0; /* Un poco más oscuro cuando se pasa el mouse por encima */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9E9E9E; /* Gris medio para el thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #757575; /* Gris oscuro cuando se pasa el mouse por encima */
+}
+::-webkit-scrollbar-thumb:active {
+  background: #616161; /* Gris muy oscuro cuando se hace clic */
 }
