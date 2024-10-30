@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="h-screen min-h-screen flex">
       {isDashboardAsideVisible && (
-        <aside className="transition-transform w-64 bg-deep-navy text-white">
+        <aside className="transition-transform w-72 bg-deep-navy text-white">
           <DashboardAside />
         </aside>
       )}
