@@ -8,7 +8,7 @@ export default {
       },
       backgroundColor: {
         body: '#1B1C31',
-        card: '#1E2139',
+        card: '#2C2D4C',
         'midnight-black': '#0b0e14',
         'create-button': '#61DAFA',
         'deep-navy': '#0D0E23'
