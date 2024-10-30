@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'midnight-black': '#0b0e14'
+        'midnight-black': '#0b0e14',
+        'bg-card': '#40415e',
       },
       backgroundColor: {
         body: '#1B1C31',
