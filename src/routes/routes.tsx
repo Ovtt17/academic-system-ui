@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import Login from '../components/Login';
+import Login from '../components/login/Login';
+import Home from '../pages/Home';
 const ROUTES = {
   // General Routes
   HOME: '/',
@@ -18,6 +19,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       {/* General Routes */}
+      <Route path={ROUTES.HOME} element={<Home />} />
       <Route path={ROUTES.LOGIN} element={<Login />} />
     </Routes>
   )
