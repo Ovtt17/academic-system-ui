@@ -17,13 +17,11 @@ const ROUTES = {
 
 const AppRoutes = () => {
   return (
-    <main className="relative p-2 flex flex-col">
     <Routes>
       {/* General Routes */}
       <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
       <Route path={ROUTES.LOGIN} element={<Login />} />
     </Routes>
-    </main>
   )
 };
 
