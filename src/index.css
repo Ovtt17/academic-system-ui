@@ -8,7 +8,8 @@
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --tw-bg-body: #F0F4F9;
+  --tw-bg-body: #1B1C31;
+  --tw-bg-card: #2C2D4C;
   --tw-bg-midnight-black: #0b0e14;
 }
 
