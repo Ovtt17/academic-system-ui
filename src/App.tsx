@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import AppRoutes from './routes/routes';
+import Navigation from './components/navigation/Navigation';
+import { useState } from 'react';
+import DashboardAside from './components/dashboard/DashboardAside';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isDashboardAsideVisible, setDashboardAsideVisible] = useState(true);
+
+  const toggleDashboardAside = () => {
+    setDashboardAsideVisible(!isDashboardAsideVisible);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="h-screen min-h-screen flex overflow-hidden">
+      <aside
+        className={`transition-transform transform ${isDashboardAsideVisible ? 'translate-x-0' : '-translate-x-full'
+          } w-72 bg-deep-navy text-white fixed inset-y-0 left-0 z-30`}
+      >
+        <DashboardAside />
+      </aside>
+      <div
+        className={`flex flex-col flex-grow transition-transform duration-300 ${isDashboardAsideVisible ? 'ml-72' : 'ml-0'
+          }`}
+      >
+        <header>
+          <Navigation toggleDashboardAside={toggleDashboardAside} />
+        </header>
+        <main className="relative flex-grow">
+          <AppRoutes />
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
