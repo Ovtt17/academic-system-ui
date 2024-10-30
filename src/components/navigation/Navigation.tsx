@@ -1,11 +1,15 @@
 import { Bars3Icon, ChatBubbleBottomCenterIcon, FolderIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
-export default function Navigation() {
+import { FC } from "react";
 
+interface NavigationProps {
+  toggleDashboardAside: () => void;
+}
+
+const Navigation: FC<NavigationProps> = ({ toggleDashboardAside }) => {
   return (
-
     <div className="w-full px-2 sm:px-6 lg:px-8">
       <div className="relative flex h-16">
-        <button className="p-2">
+        <button className="p-2" onClick={toggleDashboardAside}>
           <Bars3Icon className="h-8 w-8" />
         </button>
         <nav className="absolute right-0 h-16 p-4 text-white">
@@ -34,4 +38,6 @@ export default function Navigation() {
       </div>
     </div>
   )
-}
+};
+
+export default Navigation;
