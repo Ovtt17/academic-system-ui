@@ -1,3 +1,4 @@
+import DashboardMainMenu from "./MainMenu";
 import UserCard from "./UserCard";
 
 const DashboardAside = () => {
@@ -6,6 +7,7 @@ const DashboardAside = () => {
       <section className="flex flex-col p-4 gap-4">
         <h2 className="text-lg font-semibold">Dashboard</h2>
         <UserCard />
+        <DashboardMainMenu />
       </section>
     </div>
   );
