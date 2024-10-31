@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { DashboardMenuItem } from "../../data/mainMenuItems";
 import { Link } from "react-router-dom";
+import { DashboardMenuItem } from "../../types/dashboardMenuItem";
 
 interface MenuCardProps {
   item: DashboardMenuItem;
