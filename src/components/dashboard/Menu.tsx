@@ -9,7 +9,7 @@ interface MenuProps {
 
 const Menu: FC<MenuProps> = ({ title, menuItems }) => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       <h3 className="text-md font-semibold">{title}</h3>
       {menuItems.map((item, index) => (
         <MenuCard
