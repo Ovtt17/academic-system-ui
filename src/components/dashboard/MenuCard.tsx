@@ -11,10 +11,10 @@ const MenuCard: FC<MenuCardProps> = ({ item }) => {
     <Link to={item.href}>
       <div className="flex space-x-5 bg-card rounded-lg p-3 items-center">
         <div className="text-gray-400">
-          {item.icon}
+          <span>{item.icon}</span>
         </div>
-        <div>
-          <p className="text-gray-400">{item.title}</p>
+        <div className="text-gray-400">
+          <p>{item.title}</p>
         </div>
       </div>
     </Link>
