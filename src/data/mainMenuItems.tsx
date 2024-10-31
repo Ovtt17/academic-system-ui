@@ -1,4 +1,4 @@
-import { HomeIcon, CalendarIcon, InboxIcon, UserGroupIcon, BookOpenIcon } from '@heroicons/react/24/solid';
+import { HomeIcon, CalendarIcon, UserGroupIcon, BookOpenIcon } from '@heroicons/react/24/solid';
 import { DashboardMenuItem } from '../types/dashboardMenuItem';
 
 export const mainMenuItems: DashboardMenuItem[] = [
@@ -11,11 +11,6 @@ export const mainMenuItems: DashboardMenuItem[] = [
     title: 'Calendar',
     icon: <CalendarIcon className="h-6 w-6" />,
     href: '/calendar',
-  },
-  {
-    title: 'Inbox',
-    icon: <InboxIcon className="h-6 w-6" />,
-    href: '/inbox',
   },
   {
     title: 'Classes',
