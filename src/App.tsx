@@ -1,7 +1,7 @@
 import AppRoutes from './routes/routes';
 import Navigation from './components/navigation/Navigation';
 import { useState } from 'react';
-import DashboardAside from './components/dashboard/DashboardAside';
+import DashboardAside from './components/menu/DashboardAside';
 
 function App() {
   const [isDashboardAsideVisible, setDashboardAsideVisible] = useState(true);
