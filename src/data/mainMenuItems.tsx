@@ -1,10 +1,5 @@
-import { HomeIcon, CalendarIcon, InboxIcon, BeakerIcon, CogIcon } from '@heroicons/react/24/solid';
-
-export interface DashboardMenuItem {
-  title: string;
-  icon: JSX.Element;
-  href: string;
-}
+import { HomeIcon, CalendarIcon, UserGroupIcon, BookOpenIcon } from '@heroicons/react/24/solid';
+import { DashboardMenuItem } from '../types/dashboardMenuItem';
 
 export const mainMenuItems: DashboardMenuItem[] = [
   {
@@ -18,20 +13,16 @@ export const mainMenuItems: DashboardMenuItem[] = [
     href: '/calendar',
   },
   {
-    title: 'Inbox',
-    icon: <InboxIcon className="h-6 w-6" />,
-    href: '/inbox',
+    title: 'Classes',
+    icon: <BookOpenIcon className="h-6 w-6" />,
+    href: '/classes',
   },
   {
-    title: 'Lab',
-    icon: <BeakerIcon className="h-6 w-6" />,
-    href: '/lab',
-  },
-  {
-    title: 'Settings',
-    icon: <CogIcon className="h-6 w-6" />,
-    href: '/settings',
+    title: 'Students',
+    icon: <UserGroupIcon className="h-6 w-6" />,
+    href: '/students',
   },
 ];
+
 
 export default mainMenuItems;
