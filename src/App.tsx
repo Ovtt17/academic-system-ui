@@ -25,7 +25,7 @@ function App() {
         <header>
           <Navigation toggleDashboardAside={toggleDashboardAside} />
         </header>
-        <main className="relative flex-grow">
+        <main className="relative flex-grow overflow-y-auto">
           <AppRoutes />
         </main>
       </div>
