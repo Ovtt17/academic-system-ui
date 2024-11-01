@@ -1,6 +1,6 @@
-import { User } from "./user";
+import { Teacher } from "./teacher";
 
 export interface AuthenticationResponse {
   token: string;
-  user: User;
+  user: Teacher;
 }
