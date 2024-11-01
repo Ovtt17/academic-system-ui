@@ -4,7 +4,7 @@ import { useState } from 'react';
 import DashboardAside from './components/menu/DashboardAside';
 
 function App() {
-  const [isDashboardAsideVisible, setDashboardAsideVisible] = useState(true);
+  const [isDashboardAsideVisible, setDashboardAsideVisible] = useState(false);
 
   const toggleDashboardAside = () => {
     setDashboardAsideVisible(!isDashboardAsideVisible);
