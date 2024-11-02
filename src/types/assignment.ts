@@ -1,9 +1,11 @@
+import Course from "./course";
+
 export default interface Assignment {
   id: number;
   title: string;
   description: string;
   dueDate: Date;
-  courseId: number;
+  course: Course;
   submissions: number;
 }
 
