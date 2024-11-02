@@ -10,6 +10,8 @@ export default interface Teacher {
   profilePicture?: string;
   dateOfBirth?: Dayjs | null;
   phone?: string;
+  departament: string;
+  specialization: string;
 }
 
 export type NewTeacher = Omit<Teacher, 'id'> & {
