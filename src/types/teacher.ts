@@ -1,21 +1,18 @@
 import { Dayjs } from "dayjs";
 
-interface BaseTeacher {
+export interface Teacher {
+  id: number;
+  fullName: string;
   firstName: string;
   lastName: string;
   username: string;
   email: string;
+  profilePicture?: string;
   dateOfBirth?: Dayjs | null;
   phone?: string;
 }
 
-export interface Teacher extends BaseTeacher {
-  id: number;
-  fullName: string;
-  profilePicture?: string;
-}
-
-export interface NewTeacher extends BaseTeacher {
+export type NewTeacher = Omit<Teacher, 'id'> & {
   password: string;
   confirmPassword: string;
 }
