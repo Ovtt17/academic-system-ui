@@ -1,7 +1,7 @@
 import { Dayjs } from "dayjs";
 
 export default interface Student {
-  id?: number;
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
@@ -10,3 +10,5 @@ export default interface Student {
   gender: 'MALE' | 'FEMALE';
   dateOfBirth: Dayjs | null;
 }
+
+export type NewStudent = Omit<Student, 'id'>;
