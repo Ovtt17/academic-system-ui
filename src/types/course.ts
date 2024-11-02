@@ -3,22 +3,19 @@ import { CourseSchedule } from "./courseSchedule";
 import Student from "./student";
 import { Teacher } from "./teacher";
 
-interface BaseCourse {
+export interface Course {
+  id: number;
   name: string;
   description: string;
   section: string;
   grade: string;
   schedules: CourseSchedule[];
   assignments?: Assignment[];
-}
-
-export interface Course extends BaseCourse {
-  id: number;
   students: Student[];
   teacher: Teacher;
 }
 
-export interface NewCourse extends BaseCourse {
+export type NewCourse = Omit<Course, 'id' | 'students' | 'teacher'> & {
   teacherId: number;
   studentIds: number[];
-}
+};
