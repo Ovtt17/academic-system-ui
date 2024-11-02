@@ -21,6 +21,7 @@ export interface PendingAssignment {
   title: string;
   dueDate: string;
   submissions: number;
+  totalStudents: number;
 }
 
 export interface DashboardData {
