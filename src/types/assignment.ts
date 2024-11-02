@@ -3,7 +3,7 @@ export interface Assignment {
   title: string;
   description: string;
   dueDate: Date;
-  classId: number;
+  courseId: number;
   submissions: number;
 }
 
