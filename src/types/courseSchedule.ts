@@ -1,4 +1,4 @@
-export interface CourseSchedule {
+export default interface CourseSchedule {
   id: number;
   day: string;
   startTime: Date;

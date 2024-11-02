@@ -1,4 +1,4 @@
-export interface Enrollment {
+export default interface Enrollment {
   id: string;
   courseId: string;
   studentId: string;

@@ -1,9 +1,9 @@
-import { Assignment } from "./assignment";
-import { CourseSchedule } from "./courseSchedule";
+import Assignment from "./assignment";
+import CourseSchedule from "./courseSchedule";
 import Student from "./student";
-import { Teacher } from "./teacher";
+import Teacher from "./teacher";
 
-export interface Course {
+export default interface Course {
   id: number;
   name: string;
   description: string;

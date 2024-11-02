@@ -1,4 +1,4 @@
-export interface Assignment {
+export default interface Assignment {
   id: number;
   title: string;
   description: string;

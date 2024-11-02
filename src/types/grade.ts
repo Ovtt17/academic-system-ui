@@ -1,4 +1,4 @@
-export interface Grade {
+export default interface Grade {
   id: string;
   grade: number;
   comments?: string;
