@@ -1,20 +1,21 @@
 import { Dayjs } from "dayjs";
 
 interface BaseTeacher {
-  username: string;
   firstName: string;
   lastName: string;
+  username: string;
+  email: string;
+  dateOfBirth?: Dayjs | null;
+  phone?: string;
 }
 
 export interface Teacher extends BaseTeacher {
+  id: number;
   fullName: string;
-  profilePictureUrl?: string;
+  profilePicture?: string;
 }
 
 export interface NewTeacher extends BaseTeacher {
-  dateOfBirth: Dayjs | null;
-  phone: string;
-  email: string;
   password: string;
   confirmPassword: string;
 }
