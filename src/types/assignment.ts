@@ -1,7 +1,13 @@
-export interface Assignment {
-  id: number;
+interface BaseAssignment {
   title: string;
-  dueDate: string;
+  description: string;
+  dueDate: Date;
   classId: number;
+}
+
+export interface Assignment extends BaseAssignment {
+  id: number;
   submissions: number;
 }
+
+export type NewAssignment = BaseAssignment;
