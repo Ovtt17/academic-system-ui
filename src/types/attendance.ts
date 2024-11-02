@@ -11,7 +11,7 @@ export default interface Attendance {
   course: Course;
 }
 
-export type NewAttendance = Omit<Attendance, 'id' | 'studentName' | 'courseName'> & {
+export type NewAttendance = Omit<Attendance, 'id' | 'student' | 'course'> & {
   studentId: number;
   courseId: number;
 };
