@@ -6,7 +6,7 @@ export default interface Student {
   lastName: string;
   email: string;
   address: string;
-  phone: string;
+  phone: number;
   gender: 'MALE' | 'FEMALE';
   dateOfBirth: Dayjs | null;
 }
