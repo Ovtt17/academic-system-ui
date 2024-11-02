@@ -1,10 +1,9 @@
 export default interface Enrollment {
   id: string;
   courseId: string;
-  studentFullName: string;
+  studentId: string;
+  studentName: string;
   grade: number;
 }
 
-export type NewEnrollment = Omit<Enrollment, 'id'> & {
-  studentId: string;
-};
+export type NewEnrollment = Omit<Enrollment, 'id' | 'studentName'>;
