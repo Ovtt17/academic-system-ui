@@ -1,11 +1,17 @@
+import Course from "./course";
+import Student from "./student";
+
 export default interface Attendance {
   id: number;
   studentName: string;
   courseName: string;
   date: Date;
   status: 'Present' | 'Absent' | 'Late';
-  studentId: number;
-  courseId: number;
+  student: Student;
+  course: Course;
 }
 
-export type NewAttendance = Omit<Attendance, 'id' | 'studentName' | 'courseName'>;
+export type NewAttendance = Omit<Attendance, 'id' | 'studentName' | 'courseName'> & {
+  studentId: number;
+  courseId: number;
+};

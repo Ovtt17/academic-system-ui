@@ -9,4 +9,6 @@ export default interface Assignment {
   submissions: number;
 }
 
-export type NewAssignment = Omit<Assignment, 'id' | 'submissions'>;
+export type NewAssignment = Omit<Assignment, 'id' | 'submissions'> & {
+  courseId: number
+};
