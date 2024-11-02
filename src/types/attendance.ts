@@ -2,13 +2,13 @@ interface BaseAttendance {
   date: Date;
   status: 'Present' | 'Absent' | 'Late';
   studentId: number;
-  classId: number;
+  courseId: number;
 }
 
 export interface Attendance extends BaseAttendance {
   id: number;
   studentName: string;
-  className: string;
+  courseName: string;
 }
 
 export type NewAttendance = BaseAttendance;
