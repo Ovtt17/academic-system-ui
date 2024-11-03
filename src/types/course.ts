@@ -8,7 +8,7 @@ export default interface Course {
   name: string;
   description: string;
   section: string;
-  grade: string;
+  semester: string;
   schedules: CourseSchedule[];
   assignments?: Assignment[];
   students: Student[];
