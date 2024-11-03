@@ -1,5 +1,5 @@
 import Assignment from "./assignment";
-import CourseSchedule from "./courseSchedule";
+import CourseSchedule, { NewCourseSchedule } from "./courseSchedule";
 import Student from "./student";
 import Teacher from "./teacher";
 
@@ -15,7 +15,14 @@ export default interface Course {
   teacher: Teacher;
 }
 
-export type NewCourse = Omit<Course, 'id' | 'students' | 'teacher'> & {
+export type NewCourse = Omit<Course,
+  'id' |
+  'students' |
+  'teacher' |
+  'schedules' |
+  'assignments'
+> & {
   teacherId: number;
   studentIds: number[];
+  schedules: NewCourseSchedule[];
 };
