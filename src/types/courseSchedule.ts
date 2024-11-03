@@ -1,6 +1,6 @@
 export default interface CourseSchedule {
   id: number;
-  day: string;
+  day: Date;
   startTime: Date;
   endTime: Date;
 }
