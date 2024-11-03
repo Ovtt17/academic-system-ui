@@ -26,4 +26,5 @@ export type NewAttendance = Omit<Attendance,
 > & {
   studentId: number;
   courseId: number;
+  courseScheduleId: number;
 };
