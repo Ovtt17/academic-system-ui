@@ -13,9 +13,15 @@ export default interface Grade {
   student: Student;
 }
 
-export type NewGrade = Omit<Grade, 'id' | 'assigment' | 'course' | 'teacher' | 'student'> & {
+export type NewGrade = Omit<Grade,
+  'id' |
+  'assigment' |
+  'course' |
+  'teacher' |
+  'student'
+  > & {
   assignmentId: string;
   courseId: string;
-  teacherId: string;
   studentId: string;
+  teacherId: string;
 };
