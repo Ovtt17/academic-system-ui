@@ -1,4 +1,4 @@
-export interface TeachersCourse {
+export interface TeachersCourseDetails {
   id: number;
   name: string;
   description: string;
@@ -13,7 +13,7 @@ export interface TopStudent {
 export interface WeeklyScoreByCourse {
   week: number;
   score: number;
-  Course: TeachersCourse;
+  course: TeachersCourseDetails;
 }
 
 export interface PendingAssignment {
@@ -25,7 +25,7 @@ export interface PendingAssignment {
 }
 
 export interface DashboardData {
-  courses: TeachersCourse[];
+  courses: TeachersCourseDetails[];
   students: TopStudent[];
   pendingAssignments: PendingAssignment[];
   weeklyScores: WeeklyScoreByCourse[];
