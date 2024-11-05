@@ -8,7 +8,7 @@ export default interface Student {
   address: string;
   phone: number;
   gender: 'MALE' | 'FEMALE';
-  dateOfBirth: Dayjs | null;
+  dateOfBirth: Dayjs;
 }
 
 export type NewStudent = Omit<Student, 'id'>;
