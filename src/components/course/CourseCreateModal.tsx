@@ -6,6 +6,7 @@ import CourseTextAreaField from './form/CourseTextAreaField';
 import CourseScheduleInput from './form/CourseScheduleInput';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { courseValidation } from '../../validations/courseValidation';
+import { createCourse } from '../../services/courseService';
 
 interface CourseCreateModalProps {
   onClose: () => void;
@@ -27,7 +28,7 @@ const CourseCreateModal: FC<CourseCreateModalProps> = ({ onClose }) => {
   });
 
   const onsubmit = (data: NewCourse) => {
-    console.log(data);
+    createCourse(data);
   }
 
   return (
