@@ -3,14 +3,15 @@ import Login from '../components/login/Login';
 import Dashboard from '../pages/Dashboard';
 import Calendar from '../pages/Calendar';
 import ROUTES from '../constants/routes';
+import Courses from '../pages/Courses';
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* General Routes */}
-      <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
       <Route path={ROUTES.LOGIN} element={<Login />} />
+      <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
       <Route path={ROUTES.CALENDAR} element={<Calendar />} />
+      <Route path={ROUTES.COURSES} element={<Courses />} />
     </Routes>
   )
 };
