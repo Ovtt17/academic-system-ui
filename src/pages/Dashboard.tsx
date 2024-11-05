@@ -10,7 +10,7 @@
       <section className="p-6 flex flex-col gap-6 text-gray-200">
         <CourseList courses={data.courses} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-          <WeeklyAverageChart data={data.weeklyScores} />
+          <WeeklyAverageChart data={data.weeklyScores || []} />
           <TopStudents students={data.students} />
         </div>
         <PendingAssignments pendingAssignments={data.pendingAssignments} />
