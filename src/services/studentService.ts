@@ -1,6 +1,6 @@
 import Student from "../types/student";
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}/courses`;
+const BASE_URL = `${import.meta.env.VITE_API_URL}/students`;
 
 const getHeaders = () => ({
   'Content-Type': 'application/json',
