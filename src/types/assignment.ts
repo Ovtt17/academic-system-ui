@@ -12,7 +12,7 @@ export default interface Assignment {
   dueDate: Date;
   course: Course;
   status: AssignmentStatus;
-  submissions: number;
+  totalSubmissions: number;
 }
 
 export type NewAssignment = Omit<Assignment, 'id' | 'status' | 'course' | 'submissions'> & {
