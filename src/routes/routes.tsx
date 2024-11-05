@@ -3,7 +3,7 @@ import Login from '../components/login/Login';
 import Dashboard from '../pages/Dashboard';
 import Calendar from '../pages/Calendar';
 import ROUTES from '../constants/routes';
-import Courses from '../pages/Courses';
+import Courses from '../pages/Course';
 
 const AppRoutes = () => {
   return (
