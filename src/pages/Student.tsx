@@ -1,8 +1,8 @@
 import { useState } from "react";
 import CreateButton from "../components/buttons/CreateButton";
-import CourseCreateModal from "../components/course/CourseCreateModal";
 import useFetchStudents from "../hooks/useFetchStudents";
 import StudentCard from "../components/student/StudentCard";
+import StudentCreateModal from "../components/student/StudentCreateModal";
 
 const Student = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -29,7 +29,7 @@ const Student = () => {
         />
       </div>
       {isCreateModalOpen && (
-        <CourseCreateModal
+        <StudentCreateModal
           onClose={handleCloseModal}
         />
       )}
