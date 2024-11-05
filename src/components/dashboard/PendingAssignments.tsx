@@ -5,12 +5,12 @@ interface PendingAssignmentsProps {
   pendingAssignments: PendingAssignment[];
 }
 
-const PendingAssignments: FC<PendingAssignmentsProps> = ({ pendingAssignments: pendingAssignment }) => {
+const PendingAssignments: FC<PendingAssignmentsProps> = ({ pendingAssignments }) => {
   return (
     <article className="bg-card p-4 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4">Tareas Pendientes</h2>
       <ul className="text-gray-300 space-y-3">
-        {pendingAssignment.map((assignment) => {
+        {pendingAssignments.map((assignment) => {
           const submissionPercentage = (assignment.submissions / assignment.totalStudents) * 100;
 
           return (
