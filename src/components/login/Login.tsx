@@ -12,16 +12,19 @@ const Login = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const passwordRef = useRef<HTMLInputElement>(null);
 
-  const signInWithGoogle = async () => { };
+  const signInWithGoogle = async () => { 
+    const GOOGLE_URL = import.meta.env.VITE_GOOGLE_OAUTH_URL;
+    window.location.href = GOOGLE_URL;
+  };
   const signInWithFacebook = async () => { };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
 
-    const formData = new FormData(event.currentTarget);
-    const usernameOrEmail = formData.get('email') as string;
-    const password = formData.get('password') as string;
+    // const formData = new FormData(event.currentTarget);
+    // const usernameOrEmail = formData.get('email') as string;
+    // const password = formData.get('password') as string;
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -44,7 +47,7 @@ const Login = () => {
   const handlePasswordChange = () => setErrorMessage('');
 
   return (
-    <section className="flex min-h-screen flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+    <section className="flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
       <div className={`w-full flex justify-center max-w-lg p-6 sm:p-8 bg-white rounded-md shadow-md transition-opacity duration-300 ${isLoading || isSuccess ? 'opacity-10' : ''}`}>
         <article className="flex flex-col gap-4 w-full max-w-sm">
           <img src={AppIcon} alt="App Icon" className="w-12 h-12" />

@@ -5,7 +5,7 @@ export const mainMenuItems: DashboardMenuItem[] = [
   {
     title: 'Dashboard',
     icon: <HomeIcon className="h-6 w-6" />,
-    href: '/dashboard',
+    href: '/',
   },
   {
     title: 'Calendar',

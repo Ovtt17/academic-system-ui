@@ -1,12 +1,12 @@
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { getToken, removeToken, setToken } from '../utils/auth';
-import { User } from '../types/user';
+import { Teacher } from '../types/teacher';
 import { AuthenticationResponse } from '../types/authenticationResponse';
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  user: User | null;
-  changeUser: (user: User) => void;
+  user: Teacher | null;
+  changeUser: (user: Teacher) => void;
   login: (authResponse: AuthenticationResponse) => Promise<void>;
   logout: () => void;
   verifySession: (
@@ -21,7 +21,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<Teacher | null>(null);
 
   useEffect(() => {
     const checkAuth = () => {
@@ -97,7 +97,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const changeUser = (newUser: User) => {
+  const changeUser = (newUser: Teacher) => {
     setUser(newUser);
     localStorage.setItem('user', JSON.stringify(newUser));
   }

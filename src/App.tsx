@@ -1,10 +1,10 @@
 import AppRoutes from './routes/routes';
 import Navigation from './components/navigation/Navigation';
 import { useState } from 'react';
-import DashboardAside from './components/dashboard/DashboardAside';
+import DashboardAside from './components/menu/DashboardAside';
 
 function App() {
-  const [isDashboardAsideVisible, setDashboardAsideVisible] = useState(true);
+  const [isDashboardAsideVisible, setDashboardAsideVisible] = useState(false);
 
   const toggleDashboardAside = () => {
     setDashboardAsideVisible(!isDashboardAsideVisible);
@@ -25,7 +25,7 @@ function App() {
         <header>
           <Navigation toggleDashboardAside={toggleDashboardAside} />
         </header>
-        <main className="relative flex-grow">
+        <main className="relative flex-grow overflow-y-auto">
           <AppRoutes />
         </main>
       </div>
