@@ -7,7 +7,7 @@ interface AssignmentCardProps {
 }
 
 const AssignmentCard: FC<AssignmentCardProps> = ({ assignment, totalStudents }) => {
-  const submissionPercentage = (assignment.submissions / totalStudents) * 100;
+  const submissionPercentage = (assignment.totalSubmissions / totalStudents) * 100;
   const dueDate = new Date(assignment.dueDate);
 
   return (
@@ -17,7 +17,7 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignment, totalStudents }) 
         <span className="text-sm text-gray-400">Vence: {dueDate.toLocaleDateString()}</span>
       </div>
       <div className="text-sm text-gray-300 mb-1">
-        Entregas: {assignment.submissions}/{totalStudents}
+        Entregas: {assignment.totalSubmissions}/{totalStudents}
       </div>
       <div className="w-full bg-gray-600 rounded-full h-2 overflow-hidden">
         <div
