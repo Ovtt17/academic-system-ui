@@ -1,17 +1,17 @@
 export enum DayOfWeek {
-  MONDAY = 1,
-  TUESDAY,
-  WEDNESDAY,
-  THURSDAY,
-  FRIDAY,
-  SATURDAY,
-  SUNDAY
+  MONDAY = 'MONDAY',
+  TUESDAY = 'TUESDAY',
+  WEDNESDAY = 'WEDNESDAY',
+  THURSDAY = 'THURSDAY',
+  FRIDAY = 'FRIDAY',
+  SATURDAY = 'SATURDAY',
+  SUNDAY = 'SUNDAY'
 }
 export default interface CourseSchedule {
   id: number;
   day: DayOfWeek;
-  startTime: Date;
-  endTime: Date;
+  startTime: string;
+  endTime: string;
 }
 
 export type NewCourseSchedule = Omit<CourseSchedule, 'id'>;
