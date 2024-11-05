@@ -1,3 +1,4 @@
+import CreateButton from "../components/buttons/CreateButton";
 import CourseCard from "../components/course/CourseCard";
 import useFetchCourses from "../hooks/useFetchCourses";
 
@@ -11,6 +12,11 @@ const Courses = () => {
           <CourseCard key={course.id} course={course} />
         ))}
       </section>
+      <div className="fixed bottom-5 right-10">
+        <CreateButton
+          handleCreate={() => console.log('Crear tarea')}
+        />
+      </div>
     </div>
   );
 }
