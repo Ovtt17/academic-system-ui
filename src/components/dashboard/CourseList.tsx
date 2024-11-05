@@ -7,6 +7,10 @@ interface CourseListProps {
 }
 
 const CourseList: FC<CourseListProps> = ({ courses }) => {
+
+  if (!courses.length) {
+    return <p className="text-gray-400">No courses found</p>;
+  }
   return (
     <article className="grid grid-cols-4 gap-4">
       {courses.map(course => (
