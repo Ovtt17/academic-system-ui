@@ -8,10 +8,16 @@ const ROUTES = {
   // Profile Routes
   PROFILE: '/:username',
 
+  CALENDAR: '/calendar',
+
+  COURSES: '/courses',
+
+  STUDENTS: '/students',
+
   // Report Routes
   REPORTS: '/reports',
 
-  CALENDAR: '/calendar',
+  SETTINGS: '/settings',
 };
 
 export default ROUTES;
