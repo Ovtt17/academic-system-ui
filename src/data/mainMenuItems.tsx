@@ -13,9 +13,9 @@ export const mainMenuItems: DashboardMenuItem[] = [
     href: '/calendar',
   },
   {
-    title: 'Classes',
+    title: 'Courses',
     icon: <BookOpenIcon className="h-6 w-6" />,
-    href: '/classes',
+    href: '/courses',
   },
   {
     title: 'Students',
