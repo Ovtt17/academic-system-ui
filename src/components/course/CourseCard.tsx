@@ -6,7 +6,6 @@ interface CourseCardProps {
 }
 
 const CourseCard: FC<CourseCardProps> = ({ course }) => {
-  const totalStudents = course.students.length;
 
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-sm">
@@ -15,16 +14,17 @@ const CourseCard: FC<CourseCardProps> = ({ course }) => {
       <div className="space-y-4">
         {course.assignments?.length ? (
           course.assignments.map((assignment) => {
-            const submissionPercentage = (assignment.submissions / totalStudents) * 100;
+            const submissionPercentage = (assignment.submissions / course.totalStudents) * 100;
+            const dueDate = new Date(assignment.dueDate);
 
             return (
               <div key={assignment.id} className="bg-gray-700 p-4 rounded-md">
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-medium text-gray-200">{assignment.title}</span>
-                  <span className="text-sm text-gray-400">Vence: {assignment.dueDate.toISOString()}</span>
+                  <span className="text-sm text-gray-400">Vence: {dueDate.toLocaleDateString()}</span>
                 </div>
                 <div className="text-sm text-gray-300 mb-1">
-                  Entregas: {assignment.submissions}/{totalStudents}
+                  Entregas: {assignment.submissions}/{course.totalStudents}
                 </div>
                 <div className="w-full bg-gray-600 rounded-full h-2 overflow-hidden">
                   <div
