@@ -7,6 +7,7 @@ import CourseScheduleInput from './form/CourseScheduleInput';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { courseValidation } from '../../validations/courseValidation';
 import { createCourse } from '../../services/courseService';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
 interface CourseCreateModalProps {
   onClose: () => void;
@@ -37,9 +38,7 @@ const CourseCreateModal: FC<CourseCreateModalProps> = ({ onClose }) => {
         <div className="flex justify-between items-center pb-4 border-b border-gray-200">
           <h4 className="text-sm font-medium">Create Course</h4>
           <button className="cursor-pointer" onClick={onClose}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.75732 7.75739L16.2426 16.2427M16.2426 7.75739L7.75732 16.2427" stroke="black" strokeWidth="1.6" strokeLinecap="round" />
-            </svg>
+            <XMarkIcon className="h-6 w-6 text-white" />
           </button>
         </div>
         <FormProvider {...methods}>
