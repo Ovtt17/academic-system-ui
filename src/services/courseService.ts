@@ -1,4 +1,4 @@
-import Course from "../types/course";
+import Course, { NewCourse } from "../types/course";
 
 const BASE_URL = `${import.meta.env.VITE_API_URL}/courses`;
 
@@ -21,6 +21,25 @@ export const getCourses = async (): Promise<Course[]> => {
     return courses;
   } catch (error) {
     console.error('Error fetching courses:', error);
+    throw error;
+  }
+};
+
+export const createCourse = async (course: NewCourse): Promise<Course> => {
+  try {
+    const response = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: getHeaders(),
+      credentials: 'include',
+      body: JSON.stringify(course)
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+    const createdCourse: Course = await response.json();
+    return createdCourse;
+  } catch (error) {
+    console.error('Error creating course:', error);
     throw error;
   }
 };

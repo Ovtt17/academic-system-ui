@@ -10,7 +10,7 @@ const CourseCard: FC<CourseCardProps> = ({ course }) => {
   const totalStudents = course.totalStudents;
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-sm">
+    <div className="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-sm cursor-pointer">
       <h3 className="text-2xl font-semibold text-gray-100 mb-2">{course.name}</h3>
       <p className="text-gray-400 mb-4">{course.description}</p>
       <div className="space-y-4 overflow-y-auto">
