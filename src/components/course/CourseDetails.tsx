@@ -1,16 +1,19 @@
-import { useLocation } from 'react-router-dom';
 import { DayOfWeek } from '../../types/courseSchedule';
 import { AssignmentStatus } from '../../types/assignment';
-import Course from '../../types/course';
+import { useParams } from 'react-router-dom';
+import useFetchCourseById from '../../hooks/useFetchCourseById';
 
 const CourseDetails = () => {
-  const location = useLocation();
-  const course: Course = location.state?.course;
+  const { id } = useParams<{ id: string }>();
+  const { course, loading, error } = useFetchCourseById(id as string);
+
+  if (loading) return <p className="text-center text-gray-200">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (!course) return <p className="text-center text-gray-200">Course not found.</p>;
 
   return (
     <section className="p-8 bg-gray-900 min-h-screen text-gray-200">
       <div className="max-w-4xl mx-auto space-y-6">
-
         {/* Course Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-card p-6 rounded-lg shadow-lg">
           <div>
