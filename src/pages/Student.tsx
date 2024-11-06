@@ -17,7 +17,7 @@ const Student = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex bg-deep-navy justify-center items-center">
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {students.map(student => (
           <StudentCard key={student.id} student={student} />
