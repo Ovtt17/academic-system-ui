@@ -1,8 +1,8 @@
 import Course from "./course";
 
-enum AssignmentStatus {
-  OPEN = 'Open',
-  CLOSED = 'Closed',
+export enum AssignmentStatus {
+  OPEN = 'OPEN',
+  CLOSED = 'CLOSED',
 }
 
 export default interface Assignment {

@@ -25,6 +25,24 @@ export const getCourses = async (): Promise<Course[]> => {
   }
 };
 
+export const getCourseById = async (id: string): Promise<Course> => {
+  try {
+    const response = await fetch(`${BASE_URL}/${id}`, {
+      method: 'GET',
+      headers: getHeaders(),
+      credentials: 'include'
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+    const course: Course = await response.json();
+    return course;
+  } catch (error) {
+    console.error('Error fetching course:', error);
+    throw error;
+  }
+};
+
 export const createCourse = async (course: NewCourse): Promise<Course> => {
   try {
     const response = await fetch(BASE_URL, {
