@@ -6,6 +6,7 @@ import ROUTES from '../constants/routes';
 import Courses from '../pages/Course';
 import Student from '../pages/Student';
 import Report from '../pages/Report';
+import CourseDetails from '../components/course/CourseDetails';
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
       <Route path={ROUTES.CALENDAR} element={<Calendar />} />
       <Route path={ROUTES.COURSES} element={<Courses />} />
+      <Route path={ROUTES.COURSE} element={<CourseDetails />} />
       <Route path={ROUTES.STUDENTS} element={<Student />} />
       <Route path={ROUTES.REPORTS} element={<Report />} />
     </Routes>
