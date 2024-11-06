@@ -1,6 +1,6 @@
 import Course from "./course";
 
-enum AssignmentStatus {
+export enum AssignmentStatus {
   OPEN = 'Open',
   CLOSED = 'Closed',
 }
