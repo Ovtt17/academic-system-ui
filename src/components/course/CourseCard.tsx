@@ -12,7 +12,7 @@ const CourseCard: FC<CourseCardProps> = ({ course }) => {
   const totalStudents = course.totalStudents;
 
   const handleCourseClick = () => {
-    navigate(`/courses/${course.id}`, { state: { course } });
+    navigate(`/courses/${course.id}`);
   };
 
   return (
