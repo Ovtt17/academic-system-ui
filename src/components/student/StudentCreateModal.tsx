@@ -1,35 +1,36 @@
 import { FC } from 'react';
+import { NewStudent } from '../../types/student';
+import dayjs from 'dayjs';
 import { FormProvider, useForm } from 'react-hook-form';
-import { NewCourse } from '../../types/course';
-import CourseInputField from './form/CourseInputField';
-import CourseTextAreaField from './form/CourseTextAreaField';
-import CourseScheduleInput from './form/CourseScheduleInput';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { courseValidation } from '../../validations/courseValidation';
-import { createCourse } from '../../services/courseService';
+import studentValidation from '../../validations/studentValidation';
+import { createStudent } from '../../services/studentService';
+import StudentInputField from './form/StudentInputField';
+import StudentSelectField from './form/StudentSelectField';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
-interface CourseCreateModalProps {
+interface StudentCreateModalProps {
   onClose: () => void;
 }
 
-const CourseCreateModal: FC<CourseCreateModalProps> = ({ onClose }) => {
-  const newCourseDefault: NewCourse = {
-    name: "",
-    description: "",
-    section: "",
-    semester: "",
-    teacherId: 0,
-    schedules: [],
+const StudentCreateModal: FC<StudentCreateModalProps> = ({ onClose }) => {
+  const newCourseDefault: NewStudent = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    phone: 0,
+    gender: 'MALE',
+    dateOfBirth: dayjs(),
   };
 
-  const methods = useForm<NewCourse>({
+  const methods = useForm<NewStudent>({
     defaultValues: newCourseDefault,
-    resolver: yupResolver(courseValidation),
+    resolver: yupResolver(studentValidation),
   });
 
-  const onsubmit = (data: NewCourse) => {
-    createCourse(data);
+  const onsubmit = (data: NewStudent) => {
+    createStudent(data);
   }
 
   return (
@@ -43,12 +44,14 @@ const CourseCreateModal: FC<CourseCreateModalProps> = ({ onClose }) => {
         </div>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onsubmit)} className='space-y-4 px-2 max-h-[calc(100vh-10rem)] overflow-y-auto'>
-            <CourseInputField name="name" label="Name" />
-            <CourseTextAreaField name="description" label="Description" />
-            <CourseInputField name="section" label="Section" />
-            <CourseInputField name="semester" label="Semester" />
-            <CourseInputField name="teacherId" label="Teacher ID" />
-            <CourseScheduleInput />
+            <StudentInputField name='firstName' label='First Name' />
+            <StudentInputField name='lastName' label='Last Name' />
+            <StudentInputField name='email' label='Email' />
+            <StudentInputField name='address' label='Address' />
+            <StudentInputField name='phone' label='Phone' type='number' />
+            <StudentSelectField name='gender' label='Gender' options={[{ value: 'MALE', label: 'Male' }, { value: 'FEMALE', label: 'Female' }]} />
+            <StudentInputField name='dateOfBirth' label='Date of Birth' type='date' />
+
             <div className="flex items-center justify-end pt-4 border-t border-gray-200 space-x-4">
               <button
                 type="button"
@@ -71,4 +74,4 @@ const CourseCreateModal: FC<CourseCreateModalProps> = ({ onClose }) => {
   );
 }
 
-export default CourseCreateModal;
+export default StudentCreateModal;

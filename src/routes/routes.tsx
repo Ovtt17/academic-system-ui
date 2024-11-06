@@ -4,6 +4,7 @@ import Dashboard from '../pages/Dashboard';
 import Calendar from '../pages/Calendar';
 import ROUTES from '../constants/routes';
 import Courses from '../pages/Course';
+import Student from '../pages/Student';
 
 const AppRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes = () => {
       <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
       <Route path={ROUTES.CALENDAR} element={<Calendar />} />
       <Route path={ROUTES.COURSES} element={<Courses />} />
+      <Route path={ROUTES.STUDENTS} element={<Student />} />
     </Routes>
   )
 };
