@@ -15,7 +15,7 @@ const Calendar = () => {
   ];
 
   return (
-    <div className="flex bg-deep-navy pt-4 justify-center gap-3 h-5/6">
+    <div className="flex bg-deep-navy p-4 justify-center gap-3 h-full">
       <div className="p-2 w-4/6">
         <BigCalendar
           localizer={localizer}

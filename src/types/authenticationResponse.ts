@@ -1,4 +1,4 @@
-import { Teacher } from "./teacher";
+import Teacher from "./teacher";
 
 export interface AuthenticationResponse {
   token: string;
