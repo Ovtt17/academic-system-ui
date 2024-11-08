@@ -6,7 +6,7 @@ const Report: React.FC = () => {
   const [exportFormat, setExportFormat] = useState<'PDF' | 'Excel'>('PDF');
 
   return (
-    <section className="p-8 space-y-8 bg-deep-navy text-gray-200">
+    <section className="p-8 space-y-8 text-gray-200">
       <h1 className="text-3xl font-semibold text-center">Reports</h1>
 
       {/* Export Format Selector */}
