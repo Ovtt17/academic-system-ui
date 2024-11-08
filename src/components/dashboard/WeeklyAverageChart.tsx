@@ -5,41 +5,40 @@ import { WeeklyScoreByCourse } from '../../types/dashboardData';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-// Calcular promedios semanales
-const calculateWeeklyAverages = (weekScores: WeeklyScoreByCourse[]) => {
-  const totalScores: number[] = [];
-  const numWeeks = weekScores.length;
-
-  for (let week = 1; week <= numWeeks; week++) {
-    totalScores[week] = 0;
-  }
-
-  weekScores.forEach(score => {
-    totalScores[score.week] += score.score;
-  });
-
-  const weeklyAverages = totalScores.map(total => (total / weekScores.length).toFixed(2));
-  return weeklyAverages;
-};
-
-const generateWeekLabels = (numWeeks: number) => {
-  const labels = [];
-  for (let i = 1; i <= numWeeks; i++) {
-    labels.push(`Semana ${i}`);
-  }
-  return labels;
-};
-
 interface WeeklyAverageChartProps {
   data: WeeklyScoreByCourse[];
 }
 
 const WeeklyAverageChart: React.FC<WeeklyAverageChartProps> = ({ data }) => {
-  const weeklyAverages = calculateWeeklyAverages(data);
-
-  const numWeeks = 8;
-
-  const weekLabels = generateWeekLabels(numWeeks);
+  data = [
+    {
+      "week": 1,
+      "score": 16.37,
+      "courseName": "Introduction to Computer Science"
+    },
+    {
+      "week": 2,
+      "score": 15.82,
+      "courseName": "Introduction to Computer Science"
+    },
+    {
+      "week": 3,
+      "score": 17.24,
+      "courseName": "Introduction to Computer Science"
+    },
+    {
+      "week": 4,
+      "score": 16.15,
+      "courseName": "Introduction to Computer Science"
+    },
+    {
+      "week": 5,
+      "score": 15.92,
+      "courseName": "Introduction to Computer Science"
+    }
+  ];
+  const weekLabels = data.map(score => `Semana ${score.week}`);
+  const weeklyAverages = data.map(score => score.score);
 
   const chartData = {
     labels: weekLabels,
@@ -63,7 +62,7 @@ const WeeklyAverageChart: React.FC<WeeklyAverageChartProps> = ({ data }) => {
       },
       title: {
         display: true,
-        text: "Promedio General de Alumnos a lo Largo de las Semanas",
+        text: data.length === 1 ? "Promedio General de Alumnos en la Semana" : "Promedio General de Alumnos a lo Largo de las Semanas",
         color: "#fff",
       },
     },
