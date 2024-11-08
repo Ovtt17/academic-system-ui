@@ -13,7 +13,7 @@ export interface TopStudent {
 export interface WeeklyScoreByCourse {
   week: number;
   score: number;
-  course: TeachersCourseDetails;
+  courseName: string;
 }
 
 export interface PendingAssignment {
