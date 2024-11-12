@@ -1,20 +1,9 @@
-import { useState } from "react";
 import CreateButton from "../components/buttons/CreateButton";
 import CourseCard from "../components/course/CourseCard";
 import useFetchCourses from "../hooks/useFetchCourses";
-import CourseCreateModal from "../components/course/CourseCreateModal";
 
 const Courses = () => {
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const { courses } = useFetchCourses();
-
-  const showCreateModal = () => {
-    setIsCreateModalOpen(true);
-  }
-
-  const handleCloseModal = () => {
-    setIsCreateModalOpen(false);
-  };
 
   return (
     <div className="flex h-full bg-deep-navy justify-center items-center">
@@ -25,14 +14,9 @@ const Courses = () => {
       </section>
       <div className="fixed bottom-5 right-10">
         <CreateButton
-          handleCreate={showCreateModal}
+          redirectPath="/courses/create"
         />
       </div>
-      {isCreateModalOpen && (
-        <CourseCreateModal
-          onClose={handleCloseModal}
-        />
-      )}
     </div>
   );
 }

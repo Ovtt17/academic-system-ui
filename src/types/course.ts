@@ -21,6 +21,5 @@ export type NewCourse = Omit<Course,
   'schedules' |
   'assignments'
 > & {
-  teacherId: number;
   schedules: NewCourseSchedule[];
 };
