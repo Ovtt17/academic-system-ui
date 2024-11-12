@@ -42,7 +42,7 @@ const CourseScheduleInput: FC = () => {
       <button
         type="button"
         onClick={addSchedule}
-        className="w-full py-2 rounded-lg font-semibold text-white bg-blue-600 shadow-lg hover:bg-indigo-500 transition duration-300"
+        className="w-full py-2 rounded-lg font-semibold text-white bg-blue-600 shadow-lg hover:bg-blue-800 transition duration-300"
       >
         + Add Schedule
       </button>
