@@ -7,7 +7,6 @@ export const courseValidation = yup.object().shape({
   description: yup.string().required('Description is required').min(10, 'Description must be at least 10 characters long'),
   section: yup.string().required('Section is required'),
   semester: yup.string().required('Semester is required'),
-  teacherId: yup.number().required('Teacher ID is required').positive('Teacher ID must be a positive number').integer('Teacher ID must be an integer'),
   schedules: yup.array().of(
     yup.object().shape({
       day: yup.mixed<DayOfWeek>()

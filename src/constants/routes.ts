@@ -11,6 +11,7 @@ const ROUTES = {
   CALENDAR: '/calendar',
 
   COURSES: '/courses',
+  COURSE_CREATE: '/courses/create',
   COURSE: '/courses/:id',
 
   STUDENTS: '/students',
