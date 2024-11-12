@@ -32,7 +32,7 @@ const CourseCreate = () => {
         <h4 className="text-lg font-semibold text-create-button">Create Course</h4>
       </header>
       <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onsubmit)} className="space-y-5 pt-4 max-w-lg mx-auto">
+        <form onSubmit={methods.handleSubmit(onsubmit)} className="space-y-5 pt-4 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <CourseInputField name="name" label="Name" />
             <CourseInputField name="section" label="Section" />
