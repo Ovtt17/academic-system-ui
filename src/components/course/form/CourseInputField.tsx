@@ -13,7 +13,7 @@ const CourseInputField: FC<CourseInputFieldProps> = ({ name, label, type = "text
 
   return (
     <div className="space-y-2">
-      <label htmlFor={name} className="text-sm font-medium text-gray-300">{label}</label>
+      <label htmlFor={name} className="text-xl md:text-2xl font-bold text-gray-300">{label}</label>
       <input
         type={type}
         id={name}
