@@ -11,7 +11,7 @@ const CourseTextAreaField: FC<CourseTextAreaFieldProps> = ({ name, label }) => {
   const error = errors[name];
   return (
     <div className="space-y-2">
-      <label htmlFor={name} className="text-sm font-medium text-gray-300">{label}</label>
+      <label htmlFor={name} className="text-xl md:text-2xl font-bold text-gray-300">{label}</label>
       <textarea
         id={name}
         {...register(name)}
