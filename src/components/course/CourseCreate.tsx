@@ -13,7 +13,6 @@ const CourseCreate = () => {
     description: "",
     section: "",
     semester: "",
-    teacherId: 0,
     schedules: [],
   };
 
