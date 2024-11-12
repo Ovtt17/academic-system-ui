@@ -29,16 +29,13 @@ const CourseCreate = () => {
   return (
     <div className="bg-deep-navy p-6 min-h-screen shadow-md">
       <header className="flex justify-between items-center pb-4 border-b border-gray-700">
-        <h4 className="text-lg font-semibold text-create-button">Create Course</h4>
+        <h4 className="text-2xl md:text-3xl font-bold text-create-button">Create Course 📖</h4>
       </header>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onsubmit)} className="space-y-5 pt-4 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <CourseInputField name="name" label="Name" />
-            <CourseInputField name="section" label="Section" />
-            <CourseInputField name="semester" label="Semester" />
-            <CourseInputField name="teacherId" label="Teacher ID" />
-          </div>
+          <CourseInputField name="name" label="Name" />
+          <CourseInputField name="section" label="Section" />
+          <CourseInputField name="semester" label="Semester" />
           <CourseTextAreaField name="description" label="Description" />
           <CourseScheduleInput />
           <footer className="flex items-center justify-end pt-6 border-t border-gray-700">
