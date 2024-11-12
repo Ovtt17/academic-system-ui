@@ -17,7 +17,7 @@ const CourseScheduleInput: FC = () => {
 
   return (
     <div className="space-y-4 p-4 bg-card rounded-lg shadow-md">
-      <h4 className="text-lg font-semibold text-create-button">Schedules</h4>
+      <h4 className="text-xl md:text-2xl font-bold text-create-button">Schedules</h4>
       <div className="space-y-4">
         {fields.map((field, index) => (
           <Disclosure key={field.id} as="div" className="bg-midnight-black rounded-md">
