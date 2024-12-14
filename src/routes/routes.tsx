@@ -8,6 +8,7 @@ import Student from '../pages/Student';
 import Report from '../pages/Report';
 import CourseDetails from '../components/course/CourseDetails';
 import CourseCreate from '../components/course/CourseCreate';
+import StudentCreate from "../components/student/StudentCreate.tsx";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,9 @@ const AppRoutes = () => {
       <Route path={ROUTES.COURSE} element={<CourseDetails />} />
 
       <Route path={ROUTES.STUDENTS} element={<Student />} />
+      <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
+
+
       <Route path={ROUTES.REPORTS} element={<Report />} />
     </Routes>
   )
