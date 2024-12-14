@@ -19,7 +19,7 @@ const useFetchDashboardData = () => {
   }, []);
 
   useEffect(() => {
-    fetchData();
+    fetchData().then();
   }, [fetchData]);
 
   return { data, loading, error };

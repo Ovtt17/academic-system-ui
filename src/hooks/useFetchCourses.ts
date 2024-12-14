@@ -19,7 +19,7 @@ const useFetchCourses = () => {
   };
 
   useEffect(() => {
-    fetchCourses();
+    fetchCourses().then();
   }, []);
 
   return { courses, loading, error };
