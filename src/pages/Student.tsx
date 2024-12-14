@@ -1,17 +1,10 @@
-import { useState } from "react";
 import CreateButton from "../components/buttons/CreateButton";
 import useFetchStudents from "../hooks/useFetchStudents";
 import StudentCard from "../components/student/StudentCard";
-import StudentCreateModal from "../components/student/StudentCreateModal";
 import ROUTES from "../constants/routes.ts";
 
 const Student = () => {
-  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const { students } = useFetchStudents();
-
-  const handleCloseModal = () => {
-    setIsCreateModalOpen(false);
-  };
 
   return (
     <div className="flex min-h-screen bg-deep-navy justify-center items-center">
@@ -25,11 +18,6 @@ const Student = () => {
           redirectPath={ROUTES.STUDENT_CREATE}
         />
       </div>
-      {isCreateModalOpen && (
-        <StudentCreateModal
-          onClose={handleCloseModal}
-        />
-      )}
     </div>
   );
 }
