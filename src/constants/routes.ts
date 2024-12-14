@@ -15,6 +15,8 @@ const ROUTES = {
   COURSE: '/courses/:id',
 
   STUDENTS: '/students',
+  STUDENT_CREATE: '/students/create',
+  STUDENT: '/students/:id',
 
   // Report Routes
   REPORTS: '/reports',
