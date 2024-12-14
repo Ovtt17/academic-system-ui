@@ -3,6 +3,7 @@ import CreateButton from "../components/buttons/CreateButton";
 import useFetchStudents from "../hooks/useFetchStudents";
 import StudentCard from "../components/student/StudentCard";
 import StudentCreateModal from "../components/student/StudentCreateModal";
+import ROUTES from "../constants/routes.ts";
 
 const Student = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -21,7 +22,7 @@ const Student = () => {
       </section>
       <div className="fixed bottom-5 right-10">
         <CreateButton
-          redirectPath='/student/create'
+          redirectPath={ROUTES.STUDENT_CREATE}
         />
       </div>
       {isCreateModalOpen && (
