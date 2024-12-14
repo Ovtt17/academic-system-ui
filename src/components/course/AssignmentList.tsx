@@ -1,12 +1,13 @@
 import Assignment, { AssignmentStatus } from '../../types/assignment';
 import EditButton from './EditButton';
+import {FC} from "react";
 
 interface AssignmentsProps {
   assignments: Assignment[];
   onEdit: (section: string) => void;
 }
 
-const AssignmentList: React.FC<AssignmentsProps> = ({ assignments, onEdit }) => (
+const AssignmentList: FC<AssignmentsProps> = ({ assignments, onEdit }) => (
   <div className="bg-gray-800 bg-opacity-70 p-6 rounded-xl shadow-lg relative border border-gray-700 hover:shadow-xl transition duration-200">
     <h2 className="text-xl font-medium text-blue-400 mb-4">Assignments</h2>
     <div className="space-y-4">
