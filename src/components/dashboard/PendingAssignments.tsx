@@ -8,9 +8,8 @@ interface PendingAssignmentsProps {
 const PendingAssignments: FC<PendingAssignmentsProps> = ({ pendingAssignments }) => {
   return (
     <article className="bg-card p-4 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4">Tareas Pendientes</h2>
+      <h2 className="text-xl font-semibold mb-4">Pending Assignments</h2>
       {pendingAssignments.length !== 0 ? (
-
         <ul className="text-gray-300 space-y-3">
           {pendingAssignments.map((assignment) => {
             const submissionPercentage = (assignment.submissions / assignment.totalStudents) * 100;
@@ -18,9 +17,9 @@ const PendingAssignments: FC<PendingAssignmentsProps> = ({ pendingAssignments })
               <li key={assignment.id} className="bg-gray-700 rounded-md p-2 hover:bg-gray-600 transition-colors duration-300">
                 <div className="flex justify-between items-center">
                   <div>
-                    <strong>{assignment.title}</strong> - Vence el {assignment.dueDate}
+                    <strong>{assignment.title}</strong> - Due on {assignment.dueDate}
                   </div>
-                  <div className="text-sm text-gray-400">Entregas: {assignment.submissions}/{assignment.totalStudents}</div>
+                  <div className="text-sm text-gray-400">Submissions: {assignment.submissions}/{assignment.totalStudents}</div>
                 </div>
                 <div className="w-full bg-gray-600 rounded-full mt-2">
                   <div
@@ -33,7 +32,7 @@ const PendingAssignments: FC<PendingAssignmentsProps> = ({ pendingAssignments })
           })}
         </ul>
       ) : (
-        <p className='text-gray-400'>No hay tareas pendientes</p>
+        <p className='text-gray-400'>No pending assignments</p>
       )}
     </article>
   );
