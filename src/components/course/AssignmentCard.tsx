@@ -14,7 +14,7 @@ const AssignmentCard: FC<AssignmentCardProps> = ({ assignment, totalStudents }) 
     <div key={assignment.id} className="bg-gray-700 p-4 rounded-md">
       <div className="flex justify-between items-center mb-2">
         <span className="font-medium text-gray-200">{assignment.title}</span>
-        <span className="text-sm text-gray-400">Vence: {dueDate.toLocaleDateString()}</span>
+        <span className="text-sm text-gray-400">Due: {dueDate.toLocaleDateString()}</span>
       </div>
       <div className="text-sm text-gray-300 mb-1">
         Entregas: {assignment.totalSubmissions}/{totalStudents}
