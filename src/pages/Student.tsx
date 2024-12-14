@@ -8,10 +8,6 @@ const Student = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const { students } = useFetchStudents();
 
-  const showCreateModal = () => {
-    setIsCreateModalOpen(true);
-  }
-
   const handleCloseModal = () => {
     setIsCreateModalOpen(false);
   };
@@ -25,7 +21,7 @@ const Student = () => {
       </section>
       <div className="fixed bottom-5 right-10">
         <CreateButton
-          handleCreate={showCreateModal}
+          redirectPath='/student/create'
         />
       </div>
       {isCreateModalOpen && (
