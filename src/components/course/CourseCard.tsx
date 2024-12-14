@@ -21,7 +21,9 @@ const CourseCard: FC<CourseCardProps> = ({ course }) => {
       <p className="text-gray-400 mb-4">{course.description}</p>
       <div className="space-y-4 overflow-y-auto">
         {course.assignments?.length ? (
-          course.assignments.map((assignment) => (
+          course.assignments
+            .filter(assignment => assignment.dueDate > new Date())
+            .map(assignment => (
             <AssignmentCard
               key={assignment.id}
               assignment={assignment}
