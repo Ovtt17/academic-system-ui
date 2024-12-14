@@ -17,7 +17,7 @@ const Navigation: FC<NavigationProps> = ({ toggleDashboardAside }) => {
         <nav className="absolute right-0 h-16 p-4 text-white">
           <div className="hidden md:flex items-center space-x-4">
             <div className="space-x-2 text-bg-card">
-              {mainMenuItems.map(item => <NavButton navItem={item} />)}
+              {mainMenuItems.map(item => <NavButton key={item.title} navItem={item} />)}
             </div>
           </div>
         </nav>
