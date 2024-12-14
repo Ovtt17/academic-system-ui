@@ -1,6 +1,7 @@
 import CreateButton from "../components/buttons/CreateButton";
 import CourseCard from "../components/course/CourseCard";
 import useFetchCourses from "../hooks/useFetchCourses";
+import ROUTES from "../constants/routes.ts";
 
 const Courses = () => {
   const { courses } = useFetchCourses();
@@ -14,7 +15,7 @@ const Courses = () => {
       </section>
       <div className="fixed bottom-5 right-10">
         <CreateButton
-          redirectPath="/courses/create"
+          redirectPath={ROUTES.COURSE_CREATE}
         />
       </div>
     </div>
