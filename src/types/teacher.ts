@@ -1,6 +1,7 @@
 import { Dayjs } from "dayjs";
 
 export default interface Teacher {
+  id: string;
   fullName: string;
   firstName: string;
   lastName: string;
