@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^3.9.1",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
+    "axios": "^1.8.4",
     "chart.js": "^4.4.6",
     "dayjs": "^1.11.13",
     "moment": "^2.30.1",
