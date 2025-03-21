@@ -1,7 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import AppIcon from '../../assets/app-logo.svg';
+import { useAuth } from '../../context/AuthContext';
 import SocialLoginButtons from './SocialLoginButtons';
+import { useEffect } from 'react';
+import ROUTES from '../../constants/routes';
 
 const Login = () => {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
     window.location.href = import.meta.env.VITE_GOOGLE_OAUTH_URL;
@@ -9,19 +15,23 @@ const Login = () => {
 
   const signInWithFacebook = async () => { };
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate(ROUTES.DASHBOARD);
+    }
+  }, [isAuthenticated, navigate]);
+
   return (
-    <section className="flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
-      <div className='w-full flex justify-center max-w-lg p-6 sm:p-8 bg-white rounded-md shadow-md transition-opacity duration-300'>
-        <article className="flex flex-col gap-4 w-full max-w-sm">
-          <img src={AppIcon} alt="App Icon" className="w-12 h-12" />
-          <h2 className="text-start text-3xl font-bold leading-9 tracking-tight text-gray-900">
-            Iniciar Sesión
-          </h2>
+    <section className="flex items-center justify-center min-h-screen px-4 bg-deep-navy">
+      <div className="w-full max-w-md p-6 bg-card rounded-lg shadow-lg">
+        <div className="flex flex-col items-center gap-4">
+          <img src={AppIcon} alt="App Icon" className="w-16 h-16" />
+          <h2 className="text-2xl font-semibold text-gray-100">Iniciar Sesión</h2>
           <SocialLoginButtons
             onGoogleLogin={signInWithGoogle}
             onFacebookLogin={signInWithFacebook}
           />
-        </article>
+        </div>
       </div>
     </section>
   );
