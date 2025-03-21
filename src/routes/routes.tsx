@@ -1,33 +1,49 @@
-import { Route, Routes } from 'react-router-dom';
-import Login from '../components/login/Login';
-import Dashboard from '../pages/Dashboard';
-import Calendar from '../pages/Calendar';
-import ROUTES from '../constants/routes';
-import Courses from '../pages/Course';
-import Student from '../pages/Student';
-import Report from '../pages/Report';
-import CourseDetails from '../components/course/CourseDetails';
-import CourseCreate from '../components/course/CourseCreate';
-import StudentCreate from "../components/student/StudentCreate.tsx";
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { lazy, Suspense } from "react";
+import ROUTES from "../constants/routes";
+import Loader from '../components/loader/Loader';
+import { useAuth } from '../context/AuthContext';
+
+const Login = lazy(() => import("../components/login/Login"));
+const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Calendar = lazy(() => import("../pages/Calendar"));
+const Courses = lazy(() => import("../pages/Course"));
+const Student = lazy(() => import("../pages/Student"));
+const Report = lazy(() => import("../pages/Report"));
+const CourseDetails = lazy(() => import("../components/course/CourseDetails"));
+const CourseCreate = lazy(() => import("../components/course/CourseCreate"));
+const StudentCreate = lazy(() => import("../components/student/StudentCreate"));
 
 const AppRoutes = () => {
+  const { isAuthenticated, user, loading } = useAuth();
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <Routes>
-      <Route path={ROUTES.LOGIN} element={<Login />} />
-      <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
-      <Route path={ROUTES.CALENDAR} element={<Calendar />} />
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path={ROUTES.LOGIN} element={<Login />} />
 
-      <Route path={ROUTES.COURSES} element={<Courses />} />
-      <Route path={ROUTES.COURSE_CREATE} element={<CourseCreate />} />
-      <Route path={ROUTES.COURSE} element={<CourseDetails />} />
-
-      <Route path={ROUTES.STUDENTS} element={<Student />} />
-      <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
-
-
-      <Route path={ROUTES.REPORTS} element={<Report />} />
-    </Routes>
-  )
+        {isAuthenticated && user ? (
+          <>
+            <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+            <Route path={ROUTES.REPORTS} element={<Report />} />
+            <Route path={ROUTES.CALENDAR} element={<Calendar />} />
+            <Route path={ROUTES.COURSES} element={<Courses />} />
+            <Route path={ROUTES.COURSE_CREATE} element={<CourseCreate />} />
+            <Route path={ROUTES.COURSE} element={<CourseDetails />} />
+            <Route path={ROUTES.STUDENTS} element={<Student />} />
+            <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
+            <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} />} />
+          </>
+        ) : (
+          <Route path="*" element={<Navigate to={ROUTES.LOGIN} />} />
+        )}
+      </Routes>
+    </Suspense>
+  );
 };
 
 export default AppRoutes;
