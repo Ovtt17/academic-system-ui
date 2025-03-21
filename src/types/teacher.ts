@@ -1,15 +1,6 @@
-import { Dayjs } from "dayjs";
+import User from "./user";
 
-export default interface Teacher {
-  id: string;
-  fullName: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  profilePicture?: string;
-  dateOfBirth?: Dayjs | null;
-  phone?: string;
+export interface Teacher extends User {
   departament: string;
   specialization: string;
 }
