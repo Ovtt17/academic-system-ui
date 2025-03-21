@@ -1,5 +1,6 @@
 const ROUTES = {
   // General Routes
+  HOME: '/',
   DASHBOARD: '/',
   LOGIN: '/login',
   REGISTER: '/register',
