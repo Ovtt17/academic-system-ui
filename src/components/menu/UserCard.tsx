@@ -1,7 +1,14 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { useAuth } from '../../context/AuthContext';
 
 const UserCard = () => {
+  const { user } = useAuth();
+
+  if (!user) {
+    return null;
+  }
+
   return (
     <Disclosure>
       {({ open }) => (
@@ -9,11 +16,12 @@ const UserCard = () => {
           <div className="flex items-center w-full">
             <img
               className="w-16 h-16 rounded-md"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbISPlbu2bk8HyJqM1QQ4XiUMRUfj_WpRRGA&s"
+              src={user?.profilePicture || `https://ui-avatars.com/api/?name=${user.fullName}`}
               alt="profile picture"
+              onError={(e) => { e.currentTarget.src = `https://ui-avatars.com/api/?name=${user.fullName}`; }}
             />
             <div className="p-2 flex-grow">
-              <h3 className="text-md font-semibold">John Doe Mora Pereira</h3>
+              <h3 className="text-md font-semibold">{user.fullName}</h3>
               <p className="text-sm text-gray-500">Profesor</p>
             </div>
             <DisclosureButton className="p-2">
