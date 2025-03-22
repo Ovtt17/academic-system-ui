@@ -4,6 +4,7 @@ import ROUTES from "../constants/routes";
 import Loader from '../components/loader/Loader';
 import { useAuth } from '../context/AuthContext';
 import Assignment from '../pages/Assignment';
+import AssignmentForm from '../pages/AssignmentForm';
 
 const Login = lazy(() => import("../components/login/Login"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
@@ -37,6 +38,8 @@ const AppRoutes = () => {
             <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
 
             <Route path={ROUTES.ASSIGNMENTS} element={<Assignment />} />
+            <Route path={ROUTES.ASSIGNMENT_CREATE} element={<AssignmentForm />} />
+            <Route path={ROUTES.ASSIGNMENT_BY_ID} element={<AssignmentForm />} />
 
             <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} />} />
           </>
