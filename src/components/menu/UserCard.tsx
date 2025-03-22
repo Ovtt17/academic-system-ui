@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useAuth } from '../../context/AuthContext';
 
 const UserCard = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   if (!user) {
     return null;
@@ -29,7 +29,7 @@ const UserCard = () => {
             </DisclosureButton>
           </div>
           <DisclosurePanel className="w-full mt-5 rounded-md shadow-lg z-10">
-            <button className="w-full px-4 py-2 text-center bg-red-600 hover:bg-red-500 rounded-md">
+            <button onClick={logout} className="w-full px-4 py-2 text-center bg-red-600 hover:bg-red-500 rounded-md">
               Cerrar sesión
             </button>
           </DisclosurePanel>
