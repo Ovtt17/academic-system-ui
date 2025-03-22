@@ -6,7 +6,6 @@ import { useAuth } from '../context/AuthContext';
 
 const Login = lazy(() => import("../components/login/Login"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
-const Calendar = lazy(() => import("../pages/Calendar"));
 const Courses = lazy(() => import("../pages/Course"));
 const Student = lazy(() => import("../pages/Student"));
 const Report = lazy(() => import("../pages/Report"));
@@ -30,7 +29,6 @@ const AppRoutes = () => {
           <>
             <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
             <Route path={ROUTES.REPORTS} element={<Report />} />
-            <Route path={ROUTES.CALENDAR} element={<Calendar />} />
             <Route path={ROUTES.COURSES} element={<Courses />} />
             <Route path={ROUTES.COURSE_CREATE} element={<CourseCreate />} />
             <Route path={ROUTES.COURSE} element={<CourseDetails />} />
