@@ -16,7 +16,9 @@ const InputField: FC<InputFieldProps> = ({ name, label, type }) => {
       <input
         type={type}
         id={name}
-        {...register(name)}
+        {...register(name, {
+          valueAsDate: type === "date",
+        })}
         className="w-full bg-card border border-gray-600 rounded-lg px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-create-button"
       />
       {error?.message && <p className="text-red-500 text-xs mt-1">{String(error.message)}</p>}
