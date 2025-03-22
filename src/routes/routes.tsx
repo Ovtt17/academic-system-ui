@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import ROUTES from "../constants/routes";
 import Loader from '../components/loader/Loader';
 import { useAuth } from '../context/AuthContext';
+import Assignment from '../pages/Assignment';
 
 const Login = lazy(() => import("../components/login/Login"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
@@ -31,9 +32,11 @@ const AppRoutes = () => {
             <Route path={ROUTES.REPORTS} element={<Report />} />
             <Route path={ROUTES.COURSES} element={<Courses />} />
             <Route path={ROUTES.COURSE_CREATE} element={<CourseCreate />} />
-            <Route path={ROUTES.COURSE} element={<CourseDetails />} />
+            <Route path={ROUTES.COURSE_BY_ID} element={<CourseDetails />} />
             <Route path={ROUTES.STUDENTS} element={<Student />} />
             <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
+
+            <Route path={ROUTES.ASSIGNMENTS} element={<Assignment />} />
             <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} />} />
           </>
         ) : (
