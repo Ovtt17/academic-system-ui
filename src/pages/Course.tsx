@@ -7,7 +7,12 @@ const Courses = () => {
   const { courses } = useFetchCourses();
 
   return (
-    <div className="flex h-full bg-deep-navy justify-center items-center">
+    <div className="h-full bg-deep-navy justify-center">
+      <header>
+        <h1 className="text-3xl font-semibold text-gray-100 p-6">
+          Courses
+        </h1>
+      </header>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {courses.map(course => (
           <CourseCard key={course.id} course={course} />
