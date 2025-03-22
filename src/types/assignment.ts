@@ -13,6 +13,7 @@ export default interface Assignment {
   course: Course;
   status: AssignmentStatus;
   totalSubmissions: number;
+  totalStudents: number;
 }
 
 export type NewAssignment = Omit<Assignment, 'id' | 'status' | 'course' | 'submissions'> & {

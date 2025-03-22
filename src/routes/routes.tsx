@@ -37,6 +37,7 @@ const AppRoutes = () => {
             <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
 
             <Route path={ROUTES.ASSIGNMENTS} element={<Assignment />} />
+
             <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} />} />
           </>
         ) : (
