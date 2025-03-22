@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Assignment from '../../types/assignment';
+import AssignmentResponse from '../../types/assignment';
 
 interface AssignmentCardProps {
-  assignment: Assignment;
+  assignment: AssignmentResponse;
   totalStudents: number;
 }
 
