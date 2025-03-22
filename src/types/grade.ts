@@ -1,4 +1,4 @@
-import Assignment from "./assignment";
+import AssignmentResponse from "./assignment";
 import Course from "./course";
 import Student from "./student";
 import Teacher from "./teacher";
@@ -7,7 +7,7 @@ export default interface Grade {
   id: string;
   grade: number;
   comments?: string;
-  assignment: Assignment;
+  assignment: AssignmentResponse;
   course: Course;
   teacher: Teacher;
   student: Student;
