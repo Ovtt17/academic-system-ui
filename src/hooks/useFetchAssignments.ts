@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Assignment from "../types/assignment";
+import AssignmentResponse from "../types/assignment";
 import { getAssignments } from "../services/assignmentService";
 
 const useFetchAssignments = () => {
-  const [assignments, setAssignments] = useState<Assignment[]>([]);
+  const [assignments, setAssignments] = useState<AssignmentResponse[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
