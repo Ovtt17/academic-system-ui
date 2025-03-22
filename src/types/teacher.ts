@@ -1,6 +1,6 @@
 import User from "./user";
 
-export interface Teacher extends User {
+export default interface Teacher extends User {
   departament: string;
   specialization: string;
 }
