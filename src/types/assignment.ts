@@ -5,16 +5,17 @@ export enum AssignmentStatus {
   CLOSED = 'CLOSED',
 }
 
-export default interface Assignment {
-  id: number;
+export default interface AssignmentResponse {
+  id?: number;
   title: string;
   description: string;
   dueDate: Date;
   course: Course;
   status: AssignmentStatus;
   totalSubmissions: number;
+  totalStudents: number;
 }
 
-export type NewAssignment = Omit<Assignment, 'id' | 'status' | 'course' | 'submissions'> & {
+export type AssignmentRequest = Omit<AssignmentResponse, 'status' | 'course' | 'totalSubmissions' | 'totalStudents'> & {
   courseId: number
 };

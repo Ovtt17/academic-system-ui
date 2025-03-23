@@ -1,4 +1,4 @@
-import { HomeIcon, CalendarIcon, UserGroupIcon, BookOpenIcon } from '@heroicons/react/24/solid';
+import { HomeIcon, UserGroupIcon, BookOpenIcon, ClipboardDocumentListIcon } from '@heroicons/react/24/solid';
 import { DashboardMenuItem } from '../types/dashboardMenuItem';
 
 export const mainMenuItems: DashboardMenuItem[] = [
@@ -6,11 +6,6 @@ export const mainMenuItems: DashboardMenuItem[] = [
     title: 'Dashboard',
     icon: <HomeIcon className="h-6 w-6" />,
     href: '/',
-  },
-  {
-    title: 'Calendar',
-    icon: <CalendarIcon className="h-6 w-6" />,
-    href: '/calendar',
   },
   {
     title: 'Courses',
@@ -21,6 +16,11 @@ export const mainMenuItems: DashboardMenuItem[] = [
     title: 'Students',
     icon: <UserGroupIcon className="h-6 w-6" />,
     href: '/students',
+  },
+  {
+    title: 'Assignments',
+    icon: <ClipboardDocumentListIcon className="h-6 w-6" />,
+    href: '/assignments',
   },
 ];
 

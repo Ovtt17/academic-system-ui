@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { DashboardData } from "../types/dashboardData";
-import { getDashboardData } from "../services/getDashboardData";
+import { getDashboardData } from "../services/dashboardService";
 
 const useFetchDashboardData = () => {
   const [data, setData] = useState<DashboardData>({ courses: [], students: [], weeklyScores: [], pendingAssignments: [] });
@@ -19,7 +19,7 @@ const useFetchDashboardData = () => {
   }, []);
 
   useEffect(() => {
-    fetchData();
+    fetchData().then();
   }, [fetchData]);
 
   return { data, loading, error };
