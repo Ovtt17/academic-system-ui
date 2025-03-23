@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import AssignmentResponse from '../../types/assignment';
+import { useNavigate } from 'react-router-dom';
 
 interface AssignmentCardProps {
   assignment: AssignmentResponse;
@@ -7,11 +8,16 @@ interface AssignmentCardProps {
 }
 
 const AssignmentCard: FC<AssignmentCardProps> = ({ assignment, totalStudents }) => {
+  const navigate = useNavigate();
   const submissionPercentage = (assignment.totalSubmissions / totalStudents) * 100;
   const dueDate = new Date(assignment.dueDate);
 
+  const handleAssignmentClick = () => {
+    navigate(`/assignments/${assignment.id}`);
+  }
+
   return (
-    <div key={assignment.id} className="bg-gray-700 p-4 rounded-md">
+    <div key={assignment.id} onClick={handleAssignmentClick} className="bg-gray-700 p-4 rounded-md cursor-pointer hover:bg-gray-800">
       <div className="flex justify-between items-center mb-2">
         <span className="font-medium text-gray-200">{assignment.title}</span>
         <span className="text-sm text-gray-400">Due: {dueDate.toLocaleDateString()}</span>
