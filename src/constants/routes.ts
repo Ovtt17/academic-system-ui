@@ -1,5 +1,6 @@
 const ROUTES = {
   // General Routes
+  HOME: '/',
   DASHBOARD: '/',
   LOGIN: '/login',
   REGISTER: '/register',
@@ -8,15 +9,17 @@ const ROUTES = {
   // Profile Routes
   PROFILE: '/:username',
 
-  CALENDAR: '/calendar',
-
   COURSES: '/courses',
   COURSE_CREATE: '/courses/create',
-  COURSE: '/courses/:id',
+  COURSE_BY_ID: '/courses/:id',
 
   STUDENTS: '/students',
   STUDENT_CREATE: '/students/create',
-  STUDENT: '/students/:id',
+  STUDENT_BY_ID: '/students/:id',
+
+  ASSIGNMENTS: '/assignments',
+  ASSIGNMENT_CREATE: '/assignments/create',
+  ASSIGNMENT_BY_ID: '/assignments/:id',
 
   // Report Routes
   REPORTS: '/reports',

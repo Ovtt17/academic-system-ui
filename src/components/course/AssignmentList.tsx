@@ -1,9 +1,9 @@
-import Assignment, { AssignmentStatus } from '../../types/assignment';
+import AssignmentResponse, { AssignmentStatus } from '../../types/assignment';
 import EditButton from './EditButton';
 import {FC} from "react";
 
 interface AssignmentsProps {
-  assignments: Assignment[];
+  assignments: AssignmentResponse[];
   onEdit: (section: string) => void;
 }
 

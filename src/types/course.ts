@@ -1,4 +1,4 @@
-import Assignment from "./assignment";
+import AssignmentResponse from "./assignment";
 import CourseSchedule, { NewCourseSchedule } from "./courseSchedule";
 import Teacher from "./teacher";
 
@@ -9,7 +9,7 @@ export default interface Course {
   section: string;
   semester: string;
   schedules: CourseSchedule[];
-  assignments?: Assignment[];
+  assignments?: AssignmentResponse[];
   totalStudents: number;
   teacher: Teacher;
 }

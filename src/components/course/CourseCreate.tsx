@@ -2,10 +2,10 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { NewCourse } from '../../types/course';
 import CourseTextAreaField from './form/CourseTextAreaField';
 import CourseScheduleInput from './form/CourseScheduleInput';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { courseValidation } from '../../validations/courseValidation';
 import { createCourse } from '../../services/courseService';
 import InputField from "../input/InputField.tsx";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const CourseCreate = () => {
   const newCourseDefault: NewCourse = {
@@ -18,7 +18,7 @@ const CourseCreate = () => {
 
   const methods = useForm<NewCourse>({
     defaultValues: newCourseDefault,
-    resolver: yupResolver(courseValidation),
+    resolver: zodResolver(courseValidation),
   });
 
   const onsubmit = (data: NewCourse) => {

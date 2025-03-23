@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Course from '../../types/course';
-import AssignmentCard from './AssignmentCard';
+import AssignmentCard from '../assignment/AssignmentCard';
 import { useNavigate } from 'react-router-dom';
 
 interface CourseCardProps {

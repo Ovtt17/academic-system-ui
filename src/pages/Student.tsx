@@ -7,7 +7,12 @@ const Student = () => {
   const { students } = useFetchStudents();
 
   return (
-    <div className="flex min-h-screen bg-deep-navy justify-center items-center">
+    <div className="h-full bg-deep-navy justify-center">
+      <header>
+        <h1 className="text-3xl font-semibold text-gray-100 p-6">
+          Students
+        </h1>
+      </header>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {students.map(student => (
           <StudentCard key={student.id} student={student} />
