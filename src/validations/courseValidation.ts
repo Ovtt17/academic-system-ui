@@ -17,12 +17,15 @@ export const courseValidation = z.object({
         errorMap: () => ({ message: 'Invalid day selected' }),
       }),
       startTime: timeSchema,
-      endTime: timeSchema.refine(function (this: { parent: { startTime: string } }, value) {
-              const { startTime } = this.parent;
-              return dayjs(`1970-01-01T${value}:00`).isAfter(dayjs(`1970-01-01T${startTime}:00`));
-            }, {
-              message: 'End Time must be after Start Time',
-            }),
+      endTime: timeSchema,
+    }).superRefine(({ startTime, endTime }, ctx) => {
+      if (!dayjs(`1970-01-01T${endTime}:00`).isAfter(dayjs(`1970-01-01T${startTime}:00`))) {
+        ctx.addIssue({
+          path: ['endTime'],
+          message: 'End Time must be after Start Time',
+          code: z.ZodIssueCode.custom,
+        });
+      }
     })
   ).min(1, 'At least one schedule is required'),
 });
