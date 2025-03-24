@@ -12,6 +12,7 @@ const ROUTES = {
   COURSES: '/courses',
   COURSE_CREATE: '/courses/create',
   COURSE_BY_ID: '/courses/:id',
+  COURSE_EDIT_BY_ID: '/courses/edit/:id',
 
   STUDENTS: '/students',
   STUDENT_CREATE: '/students/create',
