@@ -12,7 +12,7 @@ const CourseScheduleInput: FC = () => {
   });
 
   const addSchedule = () => {
-    append({ day: 'MONDAY', startTime: '00:00', endTime: '00:00' });
+    append({ day: 'MONDAY', startTime: '00:00', endTime: '02:00' });
   };
 
   return (
