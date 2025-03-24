@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useAuthContext } from '../../context/authContext';
+import { useAuth } from '../../context/AuthContext.tsx';
 import { MenuItem } from '@headlessui/react';
 
 const UserMenuDropDown = () => {
-  const { isAuthenticated, logout, user } = useAuthContext();
+  const { isAuthenticated, logout, user } = useAuth();
 
   return (
     <>
