@@ -1,11 +1,11 @@
 import {NewStudent} from "../../types/student.ts";
 import dayjs from "dayjs";
 import {FormProvider, useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
 import studentValidation from "../../validations/studentValidation.ts";
 import {createStudent} from "../../services/studentService.ts";
 import StudentSelectField from "./form/StudentSelectField.tsx";
 import InputField from "../input/InputField.tsx";
+import {zodResolver} from "@hookform/resolvers/zod";
 
 const StudentCreate = () => {
   const newCourseDefault: NewStudent = {
@@ -13,14 +13,14 @@ const StudentCreate = () => {
     lastName: '',
     email: '',
     address: '',
-    phone: 0,
+    phone: '',
     gender: 'MALE',
     dateOfBirth: dayjs(),
   };
 
   const methods = useForm<NewStudent>({
     defaultValues: newCourseDefault,
-    resolver: yupResolver(studentValidation),
+    resolver: zodResolver(studentValidation),
   });
 
   const onsubmit = (data: NewStudent) => {

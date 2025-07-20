@@ -34,6 +34,8 @@ const AppRoutes = () => {
             <Route path={ROUTES.COURSES} element={<Courses />} />
             <Route path={ROUTES.COURSE_CREATE} element={<CourseCreate />} />
             <Route path={ROUTES.COURSE_BY_ID} element={<CourseDetails />} />
+            <Route path={ROUTES.COURSE_EDIT_BY_ID} element={<CourseCreate />} />
+
             <Route path={ROUTES.STUDENTS} element={<Student />} />
             <Route path={ROUTES.STUDENT_CREATE} element={<StudentCreate />} />
 

@@ -22,7 +22,7 @@ const CourseSelect: FC<CourseSelectProps> = ({ name }) => {
     <SelectField
       label='Select a course'
       name={name}
-      options={courses.map((course) => ({ label: course.name, value: course.id }))
+      options={courses.map((course) => ({ label: course.name, value: Number(course.id) }))
       }
     />
   );

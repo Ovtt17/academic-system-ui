@@ -3,7 +3,7 @@ import CourseSchedule, { NewCourseSchedule } from "./courseSchedule";
 import Teacher from "./teacher";
 
 export default interface Course {
-  id: number;
+  id?: number;
   name: string;
   description: string;
   section: string;
@@ -15,7 +15,6 @@ export default interface Course {
 }
 
 export type NewCourse = Omit<Course,
-  'id' |
   'totalStudents' |
   'teacher' |
   'schedules' |

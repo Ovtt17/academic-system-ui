@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import AssignmentResponse from "../types/assignment";
 import { getAssignmentById } from "../services/assignmentService";
 
-const useFetchAssignmentById = (id: number) => {
+const useFetchAssignmentById = (id: number | null) => {
   const [assignment, setAssignment] = useState<AssignmentResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchAssignment = async () => {
+      if (!id) return;
       try {
         const assignment = await getAssignmentById(id);
         setAssignment(assignment);
