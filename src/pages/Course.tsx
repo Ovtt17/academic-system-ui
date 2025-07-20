@@ -7,7 +7,7 @@ const Courses = () => {
   const { courses } = useFetchCourses();
 
   return (
-    <div className="h-full bg-deep-navy justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-deep-navy to-black">
       <header>
         <h1 className="text-3xl font-semibold text-gray-100 p-6">
           Courses
